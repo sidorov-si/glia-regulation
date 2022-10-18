@@ -2,8 +2,8 @@
 
 nextflow.enable.dsl = 2
 
-include { NF_EXAMPLE } from './workflows/example_wf.nf'
+include { GLIA_ANALYSIS } from './workflows/glia_analysis.nf'
 
 workflow {
-    NF_EXAMPLE()
+    GLIA_ANALYSIS()
 }
