@@ -2,8 +2,9 @@
 
 nextflow.enable.dsl = 2
 
-include { GLIA_ANALYSIS } from './workflows/glia_analysis.nf'
+input_data = file( "input_data.tsv" )
+    .splitCsv(header: ['dataset_name', 'dataset_path'], 
+              skip: 1,
+              sep: '\t')
 
-workflow {
-    GLIA_ANALYSIS()
-}
+input_data.view()
