@@ -10,7 +10,7 @@ Channel
     .set { input_data_ch }
 
 input_data_ch
-    .filter { it[0] == "consensus_element_counts" }
+    .filter { it["dataset_name"] == "consensus_element_counts" }
             //  .map { it -> it[1] }
              .view()
 
