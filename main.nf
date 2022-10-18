@@ -11,8 +11,8 @@ Channel
 
 input_data_ch
     .filter { it["dataset_name"] == "consensus_element_counts" }
-            //  .map { it -> it[1] }
-             .view()
+            .map { it -> it["dataset_path"] }
+            .view()
 
 // Channel
 //     .fromPath(  )
