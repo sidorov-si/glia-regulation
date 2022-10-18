@@ -9,7 +9,11 @@ Channel
     .splitCsv( header: true, sep: '\t' )
     .set { input_data_ch }
 
-Channel
-    .fromPath( input_data_ch.filter { it[0] == "consensus_element_counts" }
-                            .map { it -> it[1] } )
-    .view()
+input_data_ch
+    .filter { it[0] == "consensus_element_counts" }
+            //  .map { it -> it[1] }
+             .view()
+
+// Channel
+//     .fromPath(  )
+//     .view()
