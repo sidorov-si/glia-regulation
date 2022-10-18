@@ -2,11 +2,11 @@
 
 nextflow.enable.dsl = 2
 
+params.samples_tsv = "input/input_data.tsv"
+
 Channel 
-    .fromPath( "input/input_data.tsv" )
-    .splitCsv( header: ['dataset_name', 'dataset_path'], 
-               skip: 1,
-               sep: '\t' )
+    .fromPath( params.samples_tsv )
+    .splitCsv( header: true, sep: '\t' )
     .view()
     // .set { input_data_ch }
 
