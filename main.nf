@@ -19,9 +19,9 @@ Channel
     .set { consensus_element_counts_ch }
 
 Channel
-    .of('[WT_D11_p1, WT_D7_p1]',
-        '[WT_D11_p2, WT_D7_p2]',
-        '[WT_D11_pM, WT_D7_pM]')
+    .of(['WT_D11_p1', 'WT_D7_p1'],
+        ['WT_D11_p2', 'WT_D7_p2'],
+        ['WT_D11_pM', 'WT_D7_pM'])
     .set { conditions_to_compare }
 
 workflow {
