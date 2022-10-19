@@ -24,7 +24,7 @@ Channel
         '[WT_D11_pM, WT_D7_pM]')
     .set { conditions_to_compare }
 
-workflow GLIA_ANALYSIS {
+workflow {
 
     SELECT_SAMPLES( consensus_element_counts_ch,
                     conditions_to_compare )
