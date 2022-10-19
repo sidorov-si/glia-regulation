@@ -1,5 +1,5 @@
 process SELECT_SAMPLES {
-    tag '${condition_pair}'
+    tag "${condition_pair}"
     label 'process_low'
 
     container "debian:sid-slim"
