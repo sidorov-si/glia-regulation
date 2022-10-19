@@ -2,7 +2,7 @@ process SELECT_SAMPLES {
     tag '${condition_pair}'
     label 'process_low'
 
-    container "bash:5.2"
+    container "debian:sid-slim"
 
     input:
     each path(all_feature_counts)
