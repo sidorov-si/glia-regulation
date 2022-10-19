@@ -2,7 +2,7 @@
 
 nextflow.enable.dsl = 2
 
-//include { SELECT_SAMPLES } from '../modules/local/select_samples.nf'
+include { SELECT_SAMPLES } from '../modules/local/select_samples.nf'
 
 params.samples_tsv = "input/input_data.tsv"
 
@@ -16,10 +16,16 @@ Channel
     .mix( input_data_ch
               .filter { it.dataset_name == "consensus_element_counts" }
               .map { it -> file( it.dataset_path ) } )
-    .view()
-//consensus_element_counts_ch = 
+    .set { consensus_element_counts_ch }
 
-// workflow GLIA_ANALYSIS {
+Channel
+    .of('[WT_D11_p1, WT_D7_p1]',
+        '[WT_D11_p2, WT_D7_p2]',
+        '[WT_D11_pM, WT_D7_pM]')
+    .set { conditions_to_compare }
 
-//     SELECT_SAMPLES(  )
-// }
+workflow GLIA_ANALYSIS {
+
+    SELECT_SAMPLES( consensus_element_counts_ch,
+                    conditions_to_compare )
+}
