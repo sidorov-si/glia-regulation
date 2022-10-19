@@ -6,7 +6,7 @@ process SELECT_SAMPLES {
 
     input:
     each path(all_feature_counts)
-    value condition_pair
+    val condition_pair
 
     output:
     path "*_${condition_pair[0]}_vs_${condition_pair[1]}.txt", emit: selected_feature_counts
