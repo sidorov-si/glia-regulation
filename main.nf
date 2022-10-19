@@ -2,7 +2,7 @@
 
 nextflow.enable.dsl = 2
 
-include { SELECT_SAMPLES } from 'modules/local/select_samples.nf'
+include { SELECT_SAMPLES } from './modules/local/select_samples.nf'
 
 params.samples_tsv = "input/input_data.tsv"
 
