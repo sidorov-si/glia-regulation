@@ -1,7 +1,6 @@
 process SELECT_SAMPLES {
     tag "${condition_pair}"
     label 'process_low'
-    debug true
 
     container "ubuntu:22.04"
 
