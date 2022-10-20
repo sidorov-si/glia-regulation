@@ -17,8 +17,7 @@ process SELECT_SAMPLES {
     """
     collist=\$(<${all_feature_counts} \
         tail -n +2 | \
-        head -1 | \
-        tr '\\t' '\\n')
+        head -1)
 
     echo \${collist} "\\n"
 
@@ -27,6 +26,7 @@ process SELECT_SAMPLES {
 }
 
 //  | \
+//         tr '\\t' '\\n' | \
 //         grep -nE '${condition_pair[0]}|${condition_pair[1]}' | \
 //         cut -d\$':' -f1)
 
