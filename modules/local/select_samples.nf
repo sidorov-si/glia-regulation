@@ -24,8 +24,8 @@ process SELECT_SAMPLES {
         tail -n +2 | \
         awk -F"\\t" \
             -v selected_cols="\${collist}" \
-            'BEGIN { OFS = "\\t" } \
-             { printf \$1, \$2, \$3, \$4, \$5, \$6 "\\t"; \
+            '{ printf \$1 "\\t" \$2 "\\t" \$3 "\\t" \
+                      \$4 "\\t" \$5 "\\t" \$6 "\\t"; \
                split(selected_cols, selected_cols_array, " "); \
                for (i = 1; i <= length(selected_cols_array); ++i) { \
                    printf \$selected_cols_array[i] "\\t" \
