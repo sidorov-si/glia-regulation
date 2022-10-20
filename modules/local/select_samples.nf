@@ -40,5 +40,3 @@ process SELECT_SAMPLES {
     END_VERSIONS
     """
 }
-
-// \$(echo \$(samtools --version 2>&1) | sed 's/^.*samtools //; s/Using.*\$//' ))
