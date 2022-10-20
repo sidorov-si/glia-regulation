@@ -16,7 +16,8 @@ process SELECT_SAMPLES {
     script:
     """
     collist=\$(<${all_feature_counts} \
-        tail -n +2)
+        tail -n +2 | \
+        head -1)
 
     echo \${collist} "\\n"
 
