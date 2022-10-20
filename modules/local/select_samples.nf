@@ -26,12 +26,12 @@ process SELECT_SAMPLES {
         awk -F"\\t" \
             -v selected_cols="\${collist}" \
             'BEGIN { OFS = "\\t" }
-             { printf \$1, \$2, \$3, \$4, \$5, \$6 "\t"; \
+             { printf \$1, \$2, \$3, \$4, \$5, \$6 "\\t"; \
                split(selected_cols, selected_cols_array, " "); \
                for (i = 1; i <= length(selected_cols_array); ++i) { \
-                   printf \$selected_cols_array[i] "\t" \
+                   printf \$selected_cols_array[i] "\\t" \
                }; \
-               printf "\n" \
+               printf "\\n" \
              }' > \
         featureCounts_${condition_pair[0]}_vs_${condition_pair[1]}.tsv
 
