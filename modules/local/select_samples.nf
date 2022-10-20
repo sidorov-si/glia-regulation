@@ -18,8 +18,7 @@ process SELECT_SAMPLES {
     collist=\$(<${all_feature_counts} \
         tail -n +2 | \
         head -1 | \
-        tr '\\t' '\\n' | \
-        grep -nE '${condition_pair[0]}|${condition_pair[1]}')
+        tr '\\t' '\\n')
 
     echo \${collist} "\\n"
 
@@ -28,6 +27,7 @@ process SELECT_SAMPLES {
 }
 
 //  | \
+//         grep -nE '${condition_pair[0]}|${condition_pair[1]}' | \
 //         cut -d\$':' -f1)
 
 // \$(echo \$(samtools --version 2>&1) | sed 's/^.*samtools //; s/Using.*\$//' ))
