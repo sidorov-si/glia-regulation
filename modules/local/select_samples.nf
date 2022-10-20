@@ -36,7 +36,7 @@ process SELECT_SAMPLES {
 
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":
-        awk: \$(awk -V)
+        awk: \$(echo \$(awk -V))
     END_VERSIONS
     """
 }
