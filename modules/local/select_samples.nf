@@ -19,14 +19,16 @@ process SELECT_SAMPLES {
         tail -n +2 | \
         head -1 | \
         tr '\\t' '\\n' | \
-        grep -nE '${condition_pair[0]}|${condition_pair[1]}' | \
-        cut -d\$':' -f1)
+        grep -nE '${condition_pair[0]}|${condition_pair[1]}')
 
     echo \${collist} "\\n"
 
 
     """
 }
+
+//  | \
+//         cut -d\$':' -f1)
 
 // \$(echo \$(samtools --version 2>&1) | sed 's/^.*samtools //; s/Using.*\$//' ))
 
