@@ -18,8 +18,7 @@ process SELECT_SAMPLES {
 
 
     <${all_feature_counts} \
-        tail -n +2 | \
-        head -1
+        sed -n '2'p
 
 
 
