@@ -21,7 +21,10 @@ Channel
 Channel
     .of(['WT_D7_p1', 'WT_D11_p1'],
         ['WT_D7_p2', 'WT_D11_p2'],
-        ['WT_D7_pM', 'WT_D11_pM'])
+        ['WT_D7_pM', 'WT_D11_pM'],
+        ['WT_D11_p1', 'MUT_D11_p1'],
+        ['WT_D11_p2', 'MUT_D11_p2'],
+        ['WT_D11_pM', 'MUT_D11_pM'])
     .set { conditions_to_compare }
 
 workflow {
